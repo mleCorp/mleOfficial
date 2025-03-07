@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLE | JavaScript Variables</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="https://www.linkedin.com/in/mendoma27/">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>JavaScript Variables | Var - Const - Let</h1>
+        <h3>In JavaScript, var, let, and const are used to declare variables, but they have key differences in scope, reassignment, and hoisting.</h3>
+
+        <ul>
+            <h3>var (Function-scoped, Can be Reassigned)</h3>
+            <li>Function-scoped (available inside the function where it is declared)</li>
+            <li>Can be redeclared and reassigned</li>
+            <li>Hoisted (moved to the top during execution but initialized as undefined)</li>
+            <li>Can cause unexpected behavior due to lack of block scope</li>
+
+            <h3>let (Block-scoped, Can be Reassigned)</h3>
+            <li>Block-scoped (only available inside {} where it is declared)</li>
+            <li>Can be reassigned but cannot be redeclared in the same scope</li>
+            <li>Hoisted but not initialized (causes a ReferenceError if accessed before declaration)</li>
+
+            <h3>const (Block-scoped, Cannot be Reassigned)</h3>
+            <li>Block-scoped (like let)</li>
+            <li>Cannot be reassigned (but objects and arrays can be modified)</li>
+            <li>Must be initialized during declaration</li>
+        </ul>
+        <br>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Label</th>
+                    <th>Input Field</th>
+                    <th>Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Input Variable:</td>
+                    <td><input type="text" id="inputVar" placeholder="Variable"></td>
+                    <td><p id="outputVar">This text will be updated with Variable Input</p></td>
+                </tr>
+                <tr>
+                    <td>Input Constant:</td>
+                    <td><input type="text" id="inputConst" placeholder="Constant"></td>
+                    <td><p id="outputConst">This text will be updated with Constant Input</p></td>
+                </tr>
+                <tr>
+                    <td>Input Let:</td>
+                    <td><input type="text" id="inputLet" placeholder="Let"></td>
+                    <td><p id="outputLet">This text will be updated with Let Input</p></td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <button id="updateBtn">Update Output</button>
+        <br>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>var</th>
+                    <th>let</th>
+                    <th>const</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Scope</strong></td>
+                    <td>Function</td>
+                    <td>Block</td>
+                    <td>Block</td>
+                </tr>
+                <tr>
+                    <td><strong>Reassignment</strong></td>
+                    <td>✅ Yes</td>
+                    <td>✅ Yes</td>
+                    <td>❌ No</td>
+                </tr>
+                <tr>
+                    <td><strong>Redeclaration</strong></td>
+                    <td>✅ Yes</td>
+                    <td>❌ No</td>
+                    <td>❌ No</td>
+                </tr>
+                <tr>
+                    <td><strong>Hoisting</strong></td>
+                    <td>✅ Yes (as undefined)</td>
+                    <td>✅ Yes (but not initialized)</td>
+                    <td>✅ Yes (but not initialized)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div>
+            <br>
+            <h3>Initializing Variables</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Function</th>
+                        <th>Format</th>
+                        <th>Purpose</th>
+                        <th>Sample</th>
+                  
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>String</strong></td>
+                        <td>String(value)</td>
+                        <td>Converts a number, boolean, or other types to a string.</td>
+                        <td>String(123) → "123" <br>
+                            String(true) → "true"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Number</strong></td>
+                        <td>Number(value)</td>
+                        <td>Converts a string to a number (integer or decimal). Returns NaN if invalid.</td>
+                        <td>Number("123.45") → 123.45 <br>
+                            Number("123abc") → NaN</td>
+                    </tr>
+                    <tr>
+                        <td><strong>parseInt</strong></td>
+                        <td>parseInt(value)</td>
+                        <td>Extracts an integer from a string. Stops reading at the first non-numeric character.</td>
+                        <td>parseInt("123abc") → 123<br>
+                            parseInt("12.34") → 12</td>
+                    </tr>
+                    <tr>
+                        <td><strong>parseFloat</strong></td>
+                        <td>parseFloat(value)</td>
+                        <td>Extracts a decimal number from a string. Stops at the first non-numeric character.</td>
+                        <td>parseFloat("12.34abc") → 12.34<br>
+                            parseFloat("99.9px") → 99.9</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Label</th>
+                    <th>First Value</th>
+                    <th>Second Value</th>
+                    <th>Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Input String Variable:</td>
+                    <td><input type="text" id="inputVarA1" placeholder="Variable"></td>
+                    <td><input type="text" id="inputVarA2" placeholder="Variable"></td>
+                    <td><p id="outputVarA">Example: FirstWord + SecondWord = FirstWordSecondWord</p></td>
+                </tr>
+                <tr>
+                    <td>Input Number Variable:</td>
+                    <td><input type="text" id="inputVarB1" placeholder="Variable"></td>
+                    <td><input type="text" id="inputVarB2" placeholder="Variable"></td>
+                    <td><p id="outputVarB">Example: 12.34 + 12.34 = 24.68</p></td>
+                </tr>
+                <tr>
+                    <td>Input parseInt Variable:</td>
+                    <td><input type="text" id="inputVarC1" placeholder="Variable"></td>
+                    <td><input type="text" id="inputVarC2" placeholder="Variable"></td>
+                    <td><p id="outputVarC">Example: 12.34 + 12.34 = 24</p></td>
+                </tr>
+                <tr>
+                    <td>Input parseFloat Variable:</td>
+                    <td><input type="text" id="inputVarD1" placeholder="Variable"></td>
+                    <td><input type="text" id="inputVarD2" placeholder="Variable"></td>
+                    <td><p id="outputVarD">Example: 12.34 + 12.34 = 24.68</p></td>
+                </tr>
+                <tr>
+                    <td>Input Trim Length Index[first]:</td>
+                    <td><input type="text" id="inputVarE1" placeholder="Variable"></td>
+                    <td><input type="text" id="inputVarE2" placeholder="Variable" disabled></td>
+                    <td><p id="outputVarE">Example: "First Second Third" = First</p></td>
+                </tr>
+                <tr>
+                    <td>Input Trim Length Index[Second]:</td>
+                    <td><input type="text" id="inputVarF1" placeholder="Variable"></td>
+                    <td><input type="text" id="inputVarF2" placeholder="Variable" disabled></td>
+                    <td><p id="outputVarF">Example: "First Second Third" = Second</p></td>
+                </tr>
+                <tr>
+                    <td>Input Trim Length Index[Last]:</td>
+                    <td><input type="text" id="inputVarG1" placeholder="Variable"></td>
+                    <td><input type="text" id="inputVarG2" placeholder="Variable" disabled></td>
+                    <td><p id="outputVarG">Example: "First Second Third" = Third</p></td>
+                </tr>
+                <tr>
+                    <td>Array Shift and Unshift:</td>
+                    <td><input type="text" id="inputVarH1" placeholder="Variable"></td>
+                    <td><input type="text" id="inputVarH2" placeholder="Variable" ></td>
+                    <td><p id="outputVarH">Example: "First Second Third"; "Fourth" = Fourth, Second, Third</p></td>
+                </tr>
+                <tr>
+                    <td>Basic Function sampleCompute:</td>
+                    <td><input type="text" id="inputVarI1" placeholder="Variable"></td>
+                    <td><input type="text" id="inputVarI2" placeholder="Variable" ></td>
+                    <td><p id="outputVarI">Example: 1 + 2 = 3</p></td>
+                </tr>
+                <tr>
+                    <td>Boolean Checkbox isTrue:</td>
+                    <td><input type="checkbox" id="checkboxJ"></td>
+                    <td></td>
+                    <td><p id="outputVarJ">Example: 1 + 2 = 3</p></td>
+                </tr>
+                <tr>
+                    <td>Nested If Else:</td>
+                    <td><input type="text" id="inputVarK1" placeholder="Variable"></td>
+                    <td></td>
+                    <td><p id="outputVarK">Example: <br>
+                        Less than 0 = Negative<br>
+                        Less than 5 = Small<br>
+                        Less than 10 = Medium<br>
+                        Less than 20 = Large<br>
+                        Equal or Greater than 20 = Extra Large<br>
+                        
+                    </p></td>
+                </tr>
+                <tr>
+                    <td>T-shirt Size and Quantity Switch Case</td>
+                    <td>
+                        <select id="sizeDropdown">
+                        <option value="Small">Small</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Large">Large</option>
+                        <option value="Extra Large">Extra Large</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="shirtQuantity">
+                            <option value="0">0</option>
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                        </select>
+                    </td>
+                    <td><p id="outputVarL">Example: <br>
+                        Size Price:<br>
+                        Small = $2<br>
+                        Medium = $3<br>
+                        Large = $4<br>
+                        Extra Large = $5<br>      
+                    </p></td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <button id="updateBtn2">Update Output</button>
+        <br>
+        </div>
+    </div>
+
+    <footer>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+        <p>&copy; 2025 by <a class="aProfile" href="https://www.linkedin.com/in/mendoma27/">Miguel Louie J. Endoma Jr.</a></p>
+    </footer>
+
+    <script src="src/jsVariants.js"></script>
+</body>
+</html>
